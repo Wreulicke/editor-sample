@@ -1,0 +1,43 @@
+html,
+body {
+  width: 100%;
+  height: 100%;
+}
+
+body {
+  background: #eee;
+}
+
+
+.max {
+  width: 100%;
+  height: 100%;
+}
+
+
+.max-height {
+  height: 100%;
+}
+
+
+.max-width {
+  width: 100%;
+}
+
+
+.navbar {
+  border-radius: 0;
+}
+
+#messages li:nth-child(odd) {
+  background-color: #eee;
+}
+
+
+.message-container {
+  pointer-events: none;
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  padding: 10%;
+}
