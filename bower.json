@@ -1,0 +1,22 @@
+{
+  "name": "socket-chat-example",
+  "description": "my first socket.io app",
+  "main": "index.js",
+  "authors": [
+    "Wreulicke <masaya2dies@gmail.com>"
+  ],
+  "license": "MIT",
+  "homepage": "https://github.com/Wreulicke/editor-sample",
+  "moduleType": [],
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "bootstrap": "^3.3.6",
+    "jquery-ui": "^1.11.4"
+  }
+}
