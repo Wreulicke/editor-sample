@@ -4,6 +4,7 @@ body {
   height: 100%;
 }
 
+
 body {
   background: #eee;
 }
@@ -39,5 +40,5 @@ body {
   position: absolute;
   bottom: 0;
   width: 100%;
-  padding: 10%;
+  padding: 0 10%;
 }
