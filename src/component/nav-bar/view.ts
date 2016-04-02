@@ -7,15 +7,20 @@ export interface Navigation extends vuejs.Vue { }
   template: template()
 })
 export class Navigation {
+  active: Number;
   data() {
     return {
-      title: "hogehoge",
+      title: "Editor",
       menus: [
         { title: "markdown" },
         { title: "mermaid" },
-        { title: "code" }
-      ]
+        { title: "code" },
+        { title: "memo" }
+      ],
+      active: 0
     };
   }
-
+  $activate(index: Number) {
+    this.active = index;
+  }
 };

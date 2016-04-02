@@ -16,6 +16,7 @@ module.exports =
     root: [
       path.resolve('bower_components')
       path.resolve('./src')
+      path.resolve('./src/module')
       path.resolve('node_modules')
     ]
     moduleDirectories: ['node_modules','bower_components']
