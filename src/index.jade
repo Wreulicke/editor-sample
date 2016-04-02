@@ -1,0 +1,18 @@
+doctype html
+html(lang="ja")
+  head
+    title test
+    link(rel='stylesheet', href='bower_components/bootstrap/dist/css/bootstrap.css', media='screen', title='no title', charset='utf-8')
+    link(rel='stylesheet', href='css/style.css', media='screen', title='no title', charset='utf-8')
+  body
+    #content.max
+      nav.navbar.navbar-inverse
+        nav-bar
+      .row.max-height
+        .col-md-12.max-height
+          textarea#editor.max-width(style='height:90%;margin:0 auto;', name='editor')
+      .message-container
+        ul#messages.list-group
+      //script(src='bower_components/jquery/dist/jquery.js')
+      //script(src='bower_components/bootstrap/dist/js/bootstrap.js')
+      script(src='app.js')

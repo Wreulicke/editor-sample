@@ -3,7 +3,8 @@ var http = require('http').Server(app);
 var io = require('socket.io')(http);
 var path = require('path')
 var fs = require('fs')
-require("./routing/router")(__dirname, app)
+require("./router")(path.resolve(__dirname, "../"), app)
+
 var watch = require('chokidar').watch(".", {
   ignored: /(\.git)|(bower_components)|(node_modules)|(\.gitignore)/,
   persistent: true
@@ -24,7 +25,6 @@ io.on('connection', function (socket) {
     fs.writeFile('test/test.html', data, function (err) {
       if (err) 
         throw err;
-      console.log("savefile")
       io.emit('open file', data);
     })
   });
@@ -35,13 +35,8 @@ io.on('connection', function (socket) {
   });
 });
 
-var port = (process.argv.length < 3)
-  ? 3000
-  : process.argv[2]
-http.listen(port, function () {
-  console.log('listening on *:' + port);
+http.listen(3000, function () {
+  console.log('listening on *:3000');
 });
-if (process.argv.length < 3) {
-  var url = 'http://localhost:' + port
-  require('child_process').exec('start ' + url + ' 2>&1||xdg-open ' + url, function () {})
-}
+
+require('child_process').exec('start http://localhost:3000 2>&1||xdg-open http://localhost:3000', function () {})

@@ -3,9 +3,35 @@
   "version": "0.0.1",
   "description": "my first socket.io app",
   "main": "index.js",
+  "scripts": {
+    "typings": "typings install"
+  },
   "dependencies": {
     "chokidar": "^1.4.3",
     "express": "4.10.2",
     "socket.io": "1.2.0"
+  },
+  "devDependencies": {
+    "bower-webpack-plugin": "^0.1.9",
+    "coffee-script": "^1.10.0",
+    "expose-loader": "^0.7.1",
+    "gulp": "^3.9.1",
+    "gulp-jade": "1.1.0",
+    "gulp-less": "^3.0.5",
+    "gulp-load-plugins": "^1.2.0",
+    "gulp-open": "^1.0.0",
+    "gulp-plumber": "^1.1.0",
+    "gulp-vulcanize": "^6.1.0",
+    "gulp-webpack": "^1.5.0",
+    "jade": "^1.11.0",
+    "jade-loader": "^0.8.0",
+    "run-sequence": "^1.1.5",
+    "ts-loader": "^0.8.1",
+    "typings": "^0.7.9",
+    "vue": "^1.0.18",
+    "vue-class-component": "^3.2.0",
+    "vue-router": "^0.7.11",
+    "webpack": "^1.12.14",
+    "webpack-dev-server": "^1.14.1"
   }
 }

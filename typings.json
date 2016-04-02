@@ -1,0 +1,7 @@
+{
+  "ambientDependencies": {
+    "socket.io-client": "registry:dt/socket.io-client#1.4.4+20160317120654",
+    "vue": "registry:dt/vue#1.0.16+20160316155526",
+    "vue-router": "registry:dt/vue-router#0.7.10+20160316155526"
+  }
+}
