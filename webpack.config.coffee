@@ -11,7 +11,6 @@ module.exports =
     app: ['./src/entry.ts']
   output:
     path: path.resolve "./target"
-    publicPath: "/target/"
     filename: '[name].js'
   alias:
     jquery: "jquery"

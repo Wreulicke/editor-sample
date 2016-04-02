@@ -54,7 +54,7 @@
 /******/ 	
 /******/ 	
 /******/ 	var hotApplyOnUpdate = true;
-/******/ 	var hotCurrentHash = "42f6b09f7f7348cf8bf7"; // eslint-disable-line no-unused-vars
+/******/ 	var hotCurrentHash = "5c854fb695f9cc039723"; // eslint-disable-line no-unused-vars
 /******/ 	var hotCurrentModuleData = {};
 /******/ 	var hotCurrentParents = []; // eslint-disable-line no-unused-vars
 /******/ 	
@@ -559,7 +559,7 @@
 /******/ 	__webpack_require__.c = installedModules;
 
 /******/ 	// __webpack_public_path__
-/******/ 	__webpack_require__.p = "/target/";
+/******/ 	__webpack_require__.p = "";
 
 /******/ 	// __webpack_hash__
 /******/ 	__webpack_require__.h = function() { return hotCurrentHash; };
@@ -613,13 +613,11 @@
 	    return App;
 	}());
 	exports.App = App;
-	console.log("debuga");
 	Vue.config.debug = true;
 	document.addEventListener("DOMContentLoaded", function (e) {
 	    var router = new VueRouter();
 	    var socket = io.connect("http://localhost:3000");
-	    var eventRegister = event_1.default(new definition_1.Test.Definition().Events, socket);
-	    console.log(new definition_1.Test.Definition().Events);
+	    var eventRegister = event_1.default((new definition_1.default()).Events, socket);
 	    socket.on("server message", function () {
 	        console.log("test");
 	    });
@@ -32351,9 +32349,11 @@
 	    function EventRegister() {
 	    }
 	    EventRegister.prototype.regist = function (socket, events) {
-	        Object.keys(events).forEach(function (eventName) {
-	            console.log(eventName);
-	            socket.on(eventName, events[eventName]);
+	        events.forEach(function (event) {
+	            console.log(event);
+	            var eventName = event.eventName;
+	            var callback = event.callback;
+	            socket.on(eventName, callback);
 	        });
 	        return this;
 	    };
@@ -32368,30 +32368,28 @@
 /***/ function(module, exports) {
 
 	"use strict";
-	var Test;
-	(function (Test) {
-	    var Definition = (function () {
-	        function Definition() {
-	        }
-	        Object.defineProperty(Definition.prototype, "Events", {
-	            get: function () {
-	                var events = [
-	                    {
-	                        eventName: "server message",
-	                        callback: function () {
-	                            console.log("testa");
-	                        }
+	var Definition = (function () {
+	    function Definition() {
+	    }
+	    Object.defineProperty(Definition.prototype, "Events", {
+	        get: function () {
+	            var events = [
+	                {
+	                    eventName: "server message",
+	                    callback: function () {
+	                        console.log("testa");
 	                    }
-	                ];
-	                return events;
-	            },
-	            enumerable: true,
-	            configurable: true
-	        });
-	        return Definition;
-	    }());
-	    Test.Definition = Definition;
-	})(Test = exports.Test || (exports.Test = {}));
+	                }
+	            ];
+	            return events;
+	        },
+	        enumerable: true,
+	        configurable: true
+	    });
+	    return Definition;
+	}());
+	Object.defineProperty(exports, "__esModule", { value: true });
+	exports.default = Definition;
 
 
 /***/ },

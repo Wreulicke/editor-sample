@@ -41,9 +41,10 @@ gulp.task 'web', ['default','watch'], ->
   packConfig.debug = true;
 
   child = require('child_process').spawn('node',['.','3000'])
-  child.stdout.on('data', (data) ->
-    process.stdout.write("[WebServer] : " + data.toString())
-  )
+  child.stdout.on 'data',
+    (data) ->
+      process.stdout.write("[WebServer] : " + data.toString())
+
 
   new WebpackDevServer(webpack(packConfig),
     publicPath: packConfig.output.publicPath

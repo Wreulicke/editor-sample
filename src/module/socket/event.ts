@@ -15,9 +15,10 @@ export default function(events?: Events, socket?: SocketIOClient.Socket): EventR
 }
 export class EventRegister {
   regist(socket: SocketIOClient.Socket, events: Events): EventRegister {
-    Object.keys(events).forEach(function(eventName: string) {
-      console.log(eventName);
-      socket.on(eventName, events[eventName]);
+    events.forEach(function(event: Event) {
+      let eventName = event.eventName;
+      let callback = event.callback;
+      socket.on(eventName, callback);
     });
     return this;
   }

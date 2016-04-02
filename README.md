@@ -15,3 +15,9 @@ rootディレクトリにて以下のコマンドを実行 ブラウザが勝手
 ```
 node .
 ```
+
+# Development
+
+```
+gulp web
+```
