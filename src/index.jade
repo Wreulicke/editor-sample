@@ -8,9 +8,7 @@ html(lang="ja")
     #content.max
       nav.navbar.navbar-inverse
         nav-bar
-      .row.max-height
-        .col-md-12.max-height
-          textarea#editor.max-width(style='height:90%;margin:0 auto;', name='editor')
+      router-view.row
       .message-container
         ul#messages.list-group
       //script(src='bower_components/jquery/dist/jquery.js')

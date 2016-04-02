@@ -1,5 +1,5 @@
 .navbar-header
-  a.navbar-brand {{title}}
+  a.navbar-brand(v-link="'/'") {{title}}
 ul.nav.navbar-nav
   li(v-for='item in menus')
-    a(:href='item.href') {{item.title}}
+    a(v-link="item.title") {{item.title}}    

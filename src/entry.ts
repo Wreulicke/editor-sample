@@ -21,6 +21,18 @@ export class App {
 Vue.config.debug = true;
 document.addEventListener("DOMContentLoaded", function(e) {
   let router = new VueRouter();
+  let View = require("./component/editor/view").View;
+  router.map({
+    "/": {
+      component: {
+        template: "test"
+      }
+    },
+    "/test": {
+      component: View
+    }
+  });
+  router.go("/test");
   let socket = io.connect("http://localhost:3000");
   let eventRegister = EventRegister((new EventDef()).Events, socket);
   socket.on("server message", function() {

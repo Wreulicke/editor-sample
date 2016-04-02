@@ -12,9 +12,6 @@ module.exports =
   output:
     path: path.resolve "./target"
     filename: '[name].js'
-  alias:
-    jquery: "jquery"
-    jQuery: "jquery"
   resolve:
     root: [
       path.resolve('bower_components')
@@ -35,10 +32,6 @@ module.exports =
     new webpack.ResolverPlugin(
       new webpack.ResolverPlugin.DirectoryDescriptionFilePlugin('.bower.json', ['main'])
     )
-    new webpack.ProvidePlugin
-      jQuery: "jquery",
-      $: "jquery"
-      "window.jQuery":"jquery"
   ]
   devServer:
     contentBase: "target"

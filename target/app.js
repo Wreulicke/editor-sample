@@ -54,7 +54,7 @@
 /******/ 	
 /******/ 	
 /******/ 	var hotApplyOnUpdate = true;
-/******/ 	var hotCurrentHash = "5c854fb695f9cc039723"; // eslint-disable-line no-unused-vars
+/******/ 	var hotCurrentHash = "de2a50e814c54c88fa10"; // eslint-disable-line no-unused-vars
 /******/ 	var hotCurrentModuleData = {};
 /******/ 	var hotCurrentParents = []; // eslint-disable-line no-unused-vars
 /******/ 	
@@ -616,6 +616,13 @@
 	Vue.config.debug = true;
 	document.addEventListener("DOMContentLoaded", function (e) {
 	    var router = new VueRouter();
+	    var View = __webpack_require__(74).View;
+	    router.map({
+	        "/test": {
+	            component: View
+	        }
+	    });
+	    router.go("/test");
 	    var socket = io.connect("http://localhost:3000");
 	    var eventRegister = event_1.default((new definition_1.default()).Events, socket);
 	    socket.on("server message", function () {
@@ -10507,9 +10514,9 @@
 
 /***/ },
 /* 6 */
-/***/ function(module, exports, __webpack_require__) {
+/***/ function(module, exports) {
 
-	/* WEBPACK VAR INJECTION */(function(jQuery) {/* ========================================================================
+	/* ========================================================================
 	 * Bootstrap: transition.js v3.3.6
 	 * http://getbootstrap.com/javascript/#transitions
 	 * ========================================================================
@@ -10569,13 +10576,12 @@
 
 	}(jQuery);
 
-	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(3)))
 
 /***/ },
 /* 7 */
-/***/ function(module, exports, __webpack_require__) {
+/***/ function(module, exports) {
 
-	/* WEBPACK VAR INJECTION */(function(jQuery) {/* ========================================================================
+	/* ========================================================================
 	 * Bootstrap: alert.js v3.3.6
 	 * http://getbootstrap.com/javascript/#alerts
 	 * ========================================================================
@@ -10670,13 +10676,12 @@
 
 	}(jQuery);
 
-	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(3)))
 
 /***/ },
 /* 8 */
-/***/ function(module, exports, __webpack_require__) {
+/***/ function(module, exports) {
 
-	/* WEBPACK VAR INJECTION */(function(jQuery) {/* ========================================================================
+	/* ========================================================================
 	 * Bootstrap: button.js v3.3.6
 	 * http://getbootstrap.com/javascript/#buttons
 	 * ========================================================================
@@ -10797,13 +10802,12 @@
 
 	}(jQuery);
 
-	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(3)))
 
 /***/ },
 /* 9 */
-/***/ function(module, exports, __webpack_require__) {
+/***/ function(module, exports) {
 
-	/* WEBPACK VAR INJECTION */(function(jQuery) {/* ========================================================================
+	/* ========================================================================
 	 * Bootstrap: carousel.js v3.3.6
 	 * http://getbootstrap.com/javascript/#carousel
 	 * ========================================================================
@@ -11041,13 +11045,12 @@
 
 	}(jQuery);
 
-	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(3)))
 
 /***/ },
 /* 10 */
-/***/ function(module, exports, __webpack_require__) {
+/***/ function(module, exports) {
 
-	/* WEBPACK VAR INJECTION */(function(jQuery) {/* ========================================================================
+	/* ========================================================================
 	 * Bootstrap: collapse.js v3.3.6
 	 * http://getbootstrap.com/javascript/#collapse
 	 * ========================================================================
@@ -11259,13 +11262,12 @@
 
 	}(jQuery);
 
-	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(3)))
 
 /***/ },
 /* 11 */
-/***/ function(module, exports, __webpack_require__) {
+/***/ function(module, exports) {
 
-	/* WEBPACK VAR INJECTION */(function(jQuery) {/* ========================================================================
+	/* ========================================================================
 	 * Bootstrap: dropdown.js v3.3.6
 	 * http://getbootstrap.com/javascript/#dropdowns
 	 * ========================================================================
@@ -11431,13 +11433,12 @@
 
 	}(jQuery);
 
-	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(3)))
 
 /***/ },
 /* 12 */
-/***/ function(module, exports, __webpack_require__) {
+/***/ function(module, exports) {
 
-	/* WEBPACK VAR INJECTION */(function(jQuery) {/* ========================================================================
+	/* ========================================================================
 	 * Bootstrap: modal.js v3.3.6
 	 * http://getbootstrap.com/javascript/#modals
 	 * ========================================================================
@@ -11775,13 +11776,12 @@
 
 	}(jQuery);
 
-	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(3)))
 
 /***/ },
 /* 13 */
-/***/ function(module, exports, __webpack_require__) {
+/***/ function(module, exports) {
 
-	/* WEBPACK VAR INJECTION */(function(jQuery) {/* ========================================================================
+	/* ========================================================================
 	 * Bootstrap: tooltip.js v3.3.6
 	 * http://getbootstrap.com/javascript/#tooltip
 	 * Inspired by the original jQuery.tipsy by Jason Frame
@@ -12296,13 +12296,12 @@
 
 	}(jQuery);
 
-	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(3)))
 
 /***/ },
 /* 14 */
-/***/ function(module, exports, __webpack_require__) {
+/***/ function(module, exports) {
 
-	/* WEBPACK VAR INJECTION */(function(jQuery) {/* ========================================================================
+	/* ========================================================================
 	 * Bootstrap: popover.js v3.3.6
 	 * http://getbootstrap.com/javascript/#popovers
 	 * ========================================================================
@@ -12411,13 +12410,12 @@
 
 	}(jQuery);
 
-	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(3)))
 
 /***/ },
 /* 15 */
-/***/ function(module, exports, __webpack_require__) {
+/***/ function(module, exports) {
 
-	/* WEBPACK VAR INJECTION */(function(jQuery) {/* ========================================================================
+	/* ========================================================================
 	 * Bootstrap: scrollspy.js v3.3.6
 	 * http://getbootstrap.com/javascript/#scrollspy
 	 * ========================================================================
@@ -12590,13 +12588,12 @@
 
 	}(jQuery);
 
-	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(3)))
 
 /***/ },
 /* 16 */
-/***/ function(module, exports, __webpack_require__) {
+/***/ function(module, exports) {
 
-	/* WEBPACK VAR INJECTION */(function(jQuery) {/* ========================================================================
+	/* ========================================================================
 	 * Bootstrap: tab.js v3.3.6
 	 * http://getbootstrap.com/javascript/#tabs
 	 * ========================================================================
@@ -12752,13 +12749,12 @@
 
 	}(jQuery);
 
-	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(3)))
 
 /***/ },
 /* 17 */
-/***/ function(module, exports, __webpack_require__) {
+/***/ function(module, exports) {
 
-	/* WEBPACK VAR INJECTION */(function(jQuery) {/* ========================================================================
+	/* ========================================================================
 	 * Bootstrap: affix.js v3.3.6
 	 * http://getbootstrap.com/javascript/#affix
 	 * ========================================================================
@@ -12921,7 +12917,6 @@
 
 	}(jQuery);
 
-	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(3)))
 
 /***/ },
 /* 18 */
@@ -13000,7 +12995,7 @@
 /* 19 */
 /***/ function(module, exports, __webpack_require__) {
 
-	/* WEBPACK VAR INJECTION */(function(global, process, jQuery) {/*!
+	/* WEBPACK VAR INJECTION */(function(global, process) {/*!
 	 * Vue.js v1.0.20
 	 * (c) 2016 Evan You
 	 * Released under the MIT License.
@@ -22821,7 +22816,7 @@
 	}
 
 	module.exports = Vue;
-	/* WEBPACK VAR INJECTION */}.call(exports, (function() { return this; }()), __webpack_require__(20), __webpack_require__(3)))
+	/* WEBPACK VAR INJECTION */}.call(exports, (function() { return this; }()), __webpack_require__(20)))
 
 /***/ },
 /* 20 */
@@ -32350,7 +32345,6 @@
 	    }
 	    EventRegister.prototype.regist = function (socket, events) {
 	        events.forEach(function (event) {
-	            console.log(event);
 	            var eventName = event.eventName;
 	            var callback = event.callback;
 	            socket.on(eventName, callback);
@@ -32444,7 +32438,7 @@
 	var jade_mixins = {};
 	var jade_interp;
 
-	buf.push("<div class=\"navbar-header\"><a class=\"navbar-brand\">{{title}}</a></div><ul class=\"nav navbar-nav\"><li v-for=\"item in menus\"><a :href=\"item.href\">{{item.title}}</a></li></ul>");;return buf.join("");
+	buf.push("<div class=\"navbar-header\"><a class=\"navbar-brand\">{{title}}</a></div><ul class=\"nav navbar-nav\"><li v-for=\"item in menus\"><a v-link=\"item.title\">{{item.title}}    </a></li></ul>");;return buf.join("");
 	}
 
 /***/ },
@@ -32704,6 +32698,63 @@
 /***/ function(module, exports) {
 
 	/* (ignored) */
+
+/***/ },
+/* 74 */
+/***/ function(module, exports, __webpack_require__) {
+
+	"use strict";
+	var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+	    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+	    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+	    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+	    return c > 3 && r && Object.defineProperty(target, key, r), r;
+	};
+	var __metadata = (this && this.__metadata) || function (k, v) {
+	    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+	};
+	var vue_class_component_1 = __webpack_require__(18);
+	var View = (function () {
+	    function View() {
+	    }
+	    View.prototype.data = function () {
+	        return {
+	            title: "hogehoge",
+	            menus: [
+	                { title: "markdown" },
+	                { title: "mermaid" },
+	                { title: "code" }
+	            ]
+	        };
+	    };
+	    View.prototype.created = function () {
+	        console.log("hoge");
+	    };
+	    View = __decorate([
+	        vue_class_component_1.default({
+	            template: __webpack_require__(75)()
+	        }), 
+	        __metadata('design:paramtypes', [])
+	    ], View);
+	    return View;
+	}());
+	exports.View = View;
+	;
+
+
+/***/ },
+/* 75 */
+/***/ function(module, exports, __webpack_require__) {
+
+	var jade = __webpack_require__(72);
+
+	module.exports = function template(locals) {
+	var buf = [];
+	var jade_mixins = {};
+	var jade_interp;
+
+	buf.push("<div class=\"col-md-12 max-height\"><textarea id=\"editor\" style=\"height:90%;margin:0 auto;\" name=\"editor\" class=\"max-width\"></textarea></div>");;return buf.join("");
+	}
 
 /***/ }
 /******/ ]);
