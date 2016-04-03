@@ -1,6 +1,5 @@
 /// <reference path="../../../typings/require.d.ts" />
 /// <reference path="../../../typings/browser.d.ts"/>
-import {IModel} from "../../module/DataModel/Model";
 import Component from "vue-class-component";
 import md from "../../module/markdown/markdown";
 
@@ -11,14 +10,14 @@ export interface View extends vuejs.Vue {
 }
 declare var jQuery: any;
 declare var socket: any;
-let Model: IModel = window["model"];
+declare var model: IModel;
 @Component({
   template: require("./template")(),
   route: {
     data: function(transition) {
       console.log("route data", arguments);
 
-      let data = Model.load(this.$route.params.type);
+      let data = model.load(this.$route.params.type);
       this.$data = data || {
         src: "",
         compiled: "",
@@ -26,7 +25,7 @@ let Model: IModel = window["model"];
       };
     },
     canReuse: function() {
-      Model.store(this.$route.params.type, this.$data);
+      model.store(this.$route.params.type, this.$data);
       return true;
     }
   }

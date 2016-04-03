@@ -2,7 +2,7 @@
 /// <reference path="../typings/browser.d.ts" />
 require("expose?jQuery!jquery");
 require("expose?bootstrap!bootstrap");
-require("DataModel/Model");
+require("expose?model!DataModel/Model");
 import Component from "vue-class-component";
 import Vue = require("vue");
 import VueRouter = require("vue-router");
