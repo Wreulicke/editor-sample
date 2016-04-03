@@ -1,7 +1,9 @@
+@import "../bower_components/highlightjs/styles/obsidian.css";
 body {
   background: #eee;
+  width: 100%;
+  height: 100%;
 }
-body,
 html {
   width: 100%;
   height: 100%;
@@ -28,4 +30,30 @@ html {
   bottom: 0;
   width: 100%;
   padding: 0 10%;
+}
+/*
+.iterate(@i) when not (@i < 10) {}
+// ループを抜けるために必要
+
+.iterate(@i) when (@i < 10) {
+  h@{i} {
+    width: @i;
+  }
+  .iterate(@i+1);
+}*/
+.markdown hr {
+  display: block;
+  height: 2px;
+  border: 0;
+  border-top: 1px solid #aaa;
+  border-bottom: 1px solid #eee;
+  margin: 1em 0;
+  padding: 0;
+}
+.markdown {
+  font-family: Georgia, Palatino, 'Palatino Linotype', Times, 'Times New Roman', serif;
+  font-size: 1.5em;
+}
+.markdown pre code {
+  font-size: 1.5em;
 }

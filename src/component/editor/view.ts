@@ -2,11 +2,15 @@
 /// <reference path="../../../typings/browser.d.ts"/>
 import {IModel} from "../../module/DataModel/Model";
 import Component from "vue-class-component";
+import md from "../../module/markdown/markdown";
 
 export interface View extends vuejs.Vue {
   src: string;
   compiled: string;
+  type: string;
 }
+declare var jQuery: any;
+declare var socket: any;
 let Model: IModel = window["model"];
 @Component({
   template: require("./template")(),
@@ -17,7 +21,8 @@ let Model: IModel = window["model"];
       let data = Model.load(this.$route.params.type);
       this.$data = data || {
         src: "",
-        compiled: ""
+        compiled: "",
+        type: this.$route.params.type
       };
     },
     canReuse: function() {
@@ -27,7 +32,27 @@ let Model: IModel = window["model"];
   }
 })
 export class View {
+  created() {
+    this.$watch("src", function(newVal, oldVal) {
+      this.compiled = md.render(newVal);
+    }.bind(this));
+  }
+  $type() {
+    return this.$route.params.type;
+  }
   compile() {
-    this.compiled = this.src;
+    this.compiled = md.render(this.src);
+  }
+  onKeyDown(isCtrl: boolean, keyCode: Number, e) {
+    if (isCtrl && keyCode === 83) {
+      e.preventDefault();
+      console.log(socket);
+    }
+  }
+  insert(e, str: string) {
+    if (e.ctrlKey && e.keyCode === 83) {
+      e.preventDefault();
+      return;
+    }
   }
 };

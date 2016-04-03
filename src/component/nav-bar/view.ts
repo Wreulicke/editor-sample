@@ -17,10 +17,13 @@ export class Navigation {
         { title: "code" },
         { title: "memo" }
       ],
-      active: 0
+      active: -1
     };
   }
   $activate(index: Number) {
     this.active = index;
+  }
+  $deactivate() {
+    this.active = -1;
   }
 };

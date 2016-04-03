@@ -6,7 +6,6 @@ require("DataModel/Model");
 import Component from "vue-class-component";
 import Vue = require("vue");
 import VueRouter = require("vue-router");
-import io = require("socket.io-client");
 import EventRegister from "./module/socket/event";
 import EventDef from "./module/socket/definition";
 
@@ -19,6 +18,7 @@ Vue.use(VueRouter);
 })
 export class App {
 }
+let socket = require("expose?socket!./module/socket/socket");
 Vue.config.debug = true;
 document.addEventListener("DOMContentLoaded", function(e) {
   let router = new VueRouter({
@@ -47,8 +47,6 @@ document.addEventListener("DOMContentLoaded", function(e) {
       component: require("./component/markdown-editor/view").View
     }
   });
-
-  let socket = io.connect("http://localhost:3000");
   let eventRegister = EventRegister((new EventDef()).Events, socket);
   socket.on("server message", function() {
     console.log("test");

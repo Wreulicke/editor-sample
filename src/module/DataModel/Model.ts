@@ -7,7 +7,7 @@ export interface IModel {
   load(type: string): Data;
   store(type: string, datum: Data);
 }
-export class Model {
+export class Model implements IModel {
   load(type: string): Data {
     console.log("load", arguments, data[type]);
     return data[type];

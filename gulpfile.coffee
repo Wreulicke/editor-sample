@@ -25,7 +25,7 @@ gulp.task 'jade', ->
   .pipe gulp.dest 'target'
 
 gulp.task 'less', ->
-  gulp.src('src/less/**/*.less',base:'src/less')
+  gulp.src('src/less/style.less',base:'src/less')
   .pipe plumber()
   .pipe $.less()
   .pipe gulp.dest 'target/css'

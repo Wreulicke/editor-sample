@@ -1,3 +1,3 @@
-.col-md-12.max-height
-  textarea.max-height.col-md-6(name='editor' @keyup.enter="compile" v-model="src")
-  div.max-height.col-md-6 {{compiled}}
+.col-md-12.max-height(v-bind:class="$type()")
+  textarea.max-height.col-md-6(name='editor' @keyup.enter="compile" @keydown="onKeyDown($event.ctrlKey,$event.keyCode,$event)" v-model="src" debounce="200")
+  div.max-height.col-md-6 {{{compiled}}}

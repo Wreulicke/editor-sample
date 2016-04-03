@@ -1,23 +1,10 @@
 body {
   background: #eee;
-}
-
-.max-height() {
-  height: 100%;
-}
-
-.max-width() {
-  width: 100%;
-}
-
-body,
-html {
   .max();
 }
 
-.max() {
-  .max-width();
-  .max-height();
+html {
+  .max();
 }
 
 .max {
@@ -44,6 +31,8 @@ html {
   pointer-events: none;
   position: absolute;
   bottom: 0;
-  width: 100%;
+  .max-width();
   padding: 0 10%;
 }
+@import "utility";
+@import "markdown";
