@@ -17,13 +17,12 @@ module.exports =
       path.resolve('bower_components')
       path.resolve('./src')
       path.resolve('./src/module')
-      path.resolve('ext_modules')
       path.resolve('node_modules')
     ]
     alias:
       'markdown-it':'markdown-it/dist/markdown-it.js'
       'highlightjs':'highlightjs/highlight.pack.min.js'
-    moduleDirectories: ['node_modules','bower_components','ext_modules']
+    moduleDirectories: ['node_modules','bower_components']
     extensions: [
       '', '.ts', '.webpack.js', '.web.js', '.js', '.jade','.pack.js'
     ]
