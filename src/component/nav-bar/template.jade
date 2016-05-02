@@ -2,4 +2,4 @@
   a.navbar-brand(v-link="'/'" @click="$deactivate") {{title}}
 ul.nav.navbar-nav
   li(v-for='item in menus' @click="$activate($index)" v-bind:class="$index===active?'active':''")
-    a(v-link="'/editor/'+item.title") {{item.title}}    
+    a(v-link="'/'+item.title") {{item.title}}    

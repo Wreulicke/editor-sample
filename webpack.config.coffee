@@ -17,11 +17,15 @@ module.exports =
       path.resolve('bower_components')
       path.resolve('./src')
       path.resolve('./src/module')
+      path.resolve('ext_modules')
       path.resolve('node_modules')
     ]
-    moduleDirectories: ['node_modules','bower_components']
+    alias:
+      'markdown-it':'markdown-it/dist/markdown-it.js'
+      'highlightjs':'highlightjs/highlight.pack.min.js'
+    moduleDirectories: ['node_modules','bower_components','ext_modules']
     extensions: [
-      '', '.ts', '.webpack.js', '.web.js', '.js', '.jade'
+      '', '.ts', '.webpack.js', '.web.js', '.js', '.jade','.pack.js'
     ]
   module:
     loaders: [
@@ -29,7 +33,6 @@ module.exports =
       { test: /\.jade$/, loader: 'jade-loader' }
     ]
   plugins: [
-    new webpack.HotModuleReplacementPlugin()
     new webpack.ResolverPlugin(
       new webpack.ResolverPlugin.DirectoryDescriptionFilePlugin('.bower.json', ['main'])
     )

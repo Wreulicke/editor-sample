@@ -16,40 +16,47 @@ Vue.use(VueRouter);
     "nav-bar": nav.Navigation
   }
 })
+
 export class App {
 }
+
 let socket = require("expose?socket!./module/socket/socket");
 Vue.config.debug = true;
 document.addEventListener("DOMContentLoaded", function(e) {
   let router = new VueRouter({
-    history: true,
+    hashbang: true,
     saveScrollPosition: true
   });
+
   router.map({
     "/": {
       component: {
         template: "test"
       }
     },
-    "/editor/:type": {
+    /*"/editor/:type": {
       component: require("./component/editor/view").View,
-    },
+    },*/
     "/memo": {
       component: require("./component/editor/view").View,
+      name: "memo"
     },
     "/mermaid": {
-      component: require("./component/mermaid-editor/view").View
+      component: require("./component/mermaid-editor/view").View,
+      name: "mermaid"
     },
     "/code": {
-      component: require("./component/code-editor/view").View
+      component: require("./component/code-editor/view").View,
+      name: "code"
     },
     "/markdown": {
-      component: require("./component/markdown-editor/view").View
+      component: require("./component/markdown-editor/view").View,
+      name: "markdown"
     }
   });
   let eventRegister = EventRegister((new EventDef()).Events, socket);
   socket.on("server message", function() {
-    console.log("test");
+    console.log("test", arguments);
   });
   router.start(App, "#content");
   router.go("/");

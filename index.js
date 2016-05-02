@@ -20,8 +20,8 @@ io.on('connection', function (socket) {
   socket.on('disconnect', function () {
     io.emit('chat message', "disconnect member")
   });
-  socket.on('send file', function (data) {
-    fs.writeFile('test/test.html', data, function (err) {
+  socket.on('send file', function (filepath, data) {
+    fs.writeFile(path.join(".", filepath), data, function (err) {
       if (err) 
         throw err;
       console.log("savefile")
@@ -30,7 +30,7 @@ io.on('connection', function (socket) {
   });
   fs.readFile('test/test.html', function (err, data) {
     if (err) 
-      throw err;
+      return;
     io.emit('open file', data.toString());
   });
 });

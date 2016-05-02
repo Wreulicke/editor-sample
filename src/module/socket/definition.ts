@@ -4,8 +4,8 @@ export default class Definition {
     let events: Events = [
       {
         eventName: "server message",
-        callback: function() {
-          console.log("testa");
+        callback: function(message) {
+          console.log("testa", message);
         }
       }
     ];
